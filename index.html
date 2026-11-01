@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guessing Game</title>
+    <meta name="author" content="Sydney Ellis">
+</head>
+<body>
+    <p id="demo"></p>
+    <script type="text/javascript">
+        // Produce a random number
+        const randomNumber = Math.floor(Math.random() * 10) +1;
+        document.getElementById("demo").innerHTML = randomNumber;
+        console.log(randomNumber);
+
+        //Ask player's guess
+        let guess = prompt("Guess a Number between 1 and 10.");
+        let guessCount = 1;
+
+        //Verify the guess
+        while (guess != randomNumber) {
+            if (guess > randomNumber) {
+                guess = prompt("Your guess was too high, guess again.");
+            }
+            else {
+                guess = prompt("Your guess was too low, guess again.");
+            }
+            guessCount++;
+        }
+        // Show the results
+        if (guessCount == 1) {
+            prompt("You guessed it in 1 guess!");
+        }
+        else {
+            prompt("You guessed it in " + guessCount + " guesses!");
+        }
+
+    </script>
+
+</body>
+</html>
